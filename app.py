@@ -13,7 +13,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-routes = [(r"/unoconv/pdf",   "handlers.messages.MessagesHandler"),
+routes = [(r"/validate",   "handlers.validator.MessagesHandler"),
           ]
 
 
@@ -25,7 +25,7 @@ class Application(web.Application):
         # self.mysqldb = torndb.Connection(host=config.MYSQL_SERVER, user=config.MYSQL_USER, port=config.MYSQL_PORT,
         #                                  password=config.MYSQL_PASSWORD, database=config.MYSQL_DB_MESSAGE,
         #                                  time_zone='+8:00', max_idle_time=252)
-        self.log = Log("./logs/", name='bfbq', dividelevel=0, loglevel='info')
+        self.log = Log("./logs/", name='validate', dividelevel=0, loglevel='info')
 
 
 def start():
